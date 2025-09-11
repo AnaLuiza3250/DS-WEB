@@ -1,0 +1,60 @@
+/*comentario em CSS*/
+/*Seletores do CSS*/
+
+/*========== o seletor universal ==========
+*{
+    color:brown;
+}
+*/
+
+/*========== Seletor TAG HTML ==========*/
+p {
+    color:blue;
+}
+ul {
+    color:blueviolet;
+}
+
+h1{
+    color:deepskyblue;
+}
+
+body{
+    /*background-color:pink;/*
+    /*cor gradinte
+    background: linear-gradient(to right, red, yellow, green);
+    background: linear-gradient(to top, red, yellow, green);
+    background: linear-gradient(circle, red, yellow, green);
+    background: linear-gradient(to right, red 50%, yellow 70%, green 10%);
+    */
+}
+
+/*========== Seletor class ==========*/
+.oi{
+    color:black;
+}
+
+/*========== Seletor ID ==========*/
+#no{
+    color:red;
+}
+
+/*codigo de cor em rgb - exemplo cor preta
+p {
+    color: rgb(0,0,0);
+}
+*/
+
+/*codigo de cor em hexadecimal - cor branca
+p {
+    color: #FFFFFF;
+}
+*/
+
+/* codigo de cor RGBA (red, green, blue, alfa(opacidade - escala de 0 à 1(decimal)))
+.oi{
+    color: rgba(0,152,200,1)
+}
+*/
+
+

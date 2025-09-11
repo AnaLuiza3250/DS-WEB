@@ -1,0 +1,57 @@
+.d1{
+    background: linear-gradient(to top,#b2dbe1, #afe8d5, #b5ecd5);
+    display: flex;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;     /* centraliza vertical */
+    height: 150px;        /* altura da div */
+    border: 10px outset #57d4e7;
+}
+
+p {
+    font-family: "Story Script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200%;
+  }
+
+.sub1{
+    text-shadow: -2px 2px 4px black;
+    font-size: 200%;
+    font-family: "Henny Penny", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+img{
+    border: 12px outset #57d4e7;
+    border-radius: 100px;
+    cursor: 
+}
+
+body{
+    background: linear-gradient(to right,#b2dbe1, #afe8d5, #b5ecd5);
+}
+
+table, th, td {
+    border: 3px #57d4e7; 
+    border-collapse: collapse;
+    /*com colocar o texto da tabela no centro:
+        text-align: center; */
+}
+
+.d3 {
+    display: flex;            /* coloca imagem e texto lado a lado */
+    align-items: flex-start;  /* alinha no topo */
+    gap: 20px;                /* espaço entre imagem e texto */
+  }
+  
+  .img-box {
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
+  .text-box {
+    font-style: italic;
+    font-size: 18px;
+  }
+  

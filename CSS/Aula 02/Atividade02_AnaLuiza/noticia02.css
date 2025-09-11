@@ -1,0 +1,32 @@
+.titulo{
+    color: #EFF9F0;
+    text-shadow: -2px 2px 2px black;
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size:400%;
+}
+
+body{
+    background:linear-gradient(to top, #9d8fc0, #6049bb, #4530dd);
+}
+
+.botao{
+    border: 2px solid #ab0cf5;
+    background-color: #cf73fa;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px; /* ajuda de IA*/
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cetex{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}

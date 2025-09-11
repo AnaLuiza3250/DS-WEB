@@ -1,0 +1,43 @@
+body{
+    background:linear-gradient(to top, #DDC8C4, #B39996, #896A67);
+}
+
+.titulo {
+    color: #EFF9F0;
+    text-shadow: -2px 2px 2px black;
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size:700%;
+}
+
+.t1{
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 30px
+}      
+
+.l1{
+    color:black;
+    cursor: pointer;
+}
+
+.l2{
+    color:black;
+    cursor: pointer;
+}
+
+.l3{
+    color:black;
+    cursor: pointer;
+}
+
+
+    tr:nth-child(odd) { /* linhas ímpares */
+    background-color: #96773c;
+    }

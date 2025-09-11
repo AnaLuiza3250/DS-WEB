@@ -1,0 +1,30 @@
+.titulo{
+    color: #EFF9F0;
+    text-shadow: -2px 2px 2px black;
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size:400%;
+}
+
+body{
+    background:linear-gradient(to top, #9ec5ab, #689d8c, #32746D);
+}
+
+.botao{
+    border: 2px solid #32746D;
+    background-color: #9ec5ab;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px; /* ajuda de IA*/
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.te1{
+    color: white;
+}

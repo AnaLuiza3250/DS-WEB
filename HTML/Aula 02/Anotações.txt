@@ -1,0 +1,5 @@
+width: LARGURA
+height: ALTURA
+pixel: resolução de uma tela 
+alt: especifica um texto alternativo para uma imagem, caso ela não possa ser exibida por algum motivo
+scr:caminho, nome

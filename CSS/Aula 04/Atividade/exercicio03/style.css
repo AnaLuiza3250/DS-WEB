@@ -1,5 +1,35 @@
+.box1{
+    background-color: aquamarine;
+}
+
 .d1{
+    background-color: aqua;
     display: inline-block;
     width: 120px;
     height: 40px;
+}
+
+.d2{
+    background-color: aqua;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+}
+
+.d3{
+    background-color: aqua;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+}
+
+.d4{
+    background-color: aqua;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+}
+
+div{
+    margin: 5px;
 }

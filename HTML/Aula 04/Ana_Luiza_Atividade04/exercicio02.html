@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pesquisa de Preferências</title>
+    </head>
+    <body>
+
+        <form>
+
+        <h2>Gênero</h2>
+            <input type="radio" name="genero" value="Masculino" required> Masculino
+            <input type="radio" name="genero" value="Feminino" required> Feminino
+            <input type="radio" name="genero" value="Outro" required> Outro
+
+            <br><hr><br>
+
+        <h2>Interesses:</h2>
+            <input type="checkbox" name="tecnologia" value="Tecnologia"> Tecnologia <br>
+            <input type="checkbox" name="Esportes" value="Esportes"> Esportes <br>
+            <input type="checkbox" name="Arte" value="Arte"> Arte <br>
+            <input type="checkbox" name="Música" value="Música" checked> Música <br>
+
+        <h2>Escolha seu carro favorito:</h2>
+            <select name="carro">
+                <optgroup label="Sedans">
+                    <option>Toyota Corolla</option>
+                    <option>Honda Civic</option>
+                </optgroup>
+                    <optgroup label="SUVs">
+                    <option>Honda CR-V</option>
+                    <option>Toyota RAV4</option>
+                </optgroup>
+            </select>
+        
+            <input type="submit" value="Enviar">
+
+        </form>
+
+    </body>
+</html>

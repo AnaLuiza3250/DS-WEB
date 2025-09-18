@@ -1,0 +1,17 @@
+.d1{
+    background-color: aqua;
+    width: 400px;
+    height: 300px;7
+    text-align: center;
+    align-content:center;
+}
+
+.d2{
+    background-color: aquamarine;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    align-content:center;
+}

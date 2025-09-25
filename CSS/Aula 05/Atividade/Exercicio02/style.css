@@ -1,0 +1,18 @@
+.d1{
+    width: 400px;
+    height: 350px;
+    background-color: cornflowerblue;
+    text-align: center;
+
+    position: relative;
+}
+
+.d2{
+    width: 150px;
+    height: 150px;
+    background-color: darkcyan;
+
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+}

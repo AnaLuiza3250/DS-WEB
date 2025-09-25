@@ -1,0 +1,57 @@
+.menu{
+    background-color: violet;
+    height: 50px;
+    width: 200px;
+    align-content: center;
+    text-align: center;
+
+    position: fixed;
+    top: 0;
+}
+
+.caixa{
+    position: relative;
+    height: 2000px;
+    width: 100px;
+    background-color: aquamarine;
+    text-align: center;
+    align-content: center;
+
+    top: 50px;
+}
+
+.caixaabsoluta{
+    width: 20px;
+    height: 20px;
+    background-color: darkblue;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.sticky{
+    height: 50px;
+    width: 200px;
+    background-color: chocolate;
+    text-align: center;
+    align-content: center;
+    margin: 100px 0px 0px 100px;
+
+    position: sticky;
+    top: 0px;
+}
+
+.absoluta{
+    /*COLOCA A DIV EM QUALQUER LUGAR DA TELA*/
+    background-color: burlywood;
+    height: 50px;
+    width: 80px;
+    text-align: center;
+    align-content: center;
+
+    position: absolute;
+    top: 50%;
+    right: 45%;
+}
+

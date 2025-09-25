@@ -1,0 +1,12 @@
+.d1{
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    align-content: center;
+    color: white;
+
+    position: relative;
+    top: 20px;
+    left: 30px;
+}

@@ -1,0 +1,158 @@
+body{
+    background-color: black;
+}
+
+.menu{
+    background-color: rgb(114, 105, 105);
+    width: 100%;
+    height: 160px;
+
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    
+    z-index: 100;
+}
+
+.titulo{
+    font-family: "Indie Flower", cursive;
+    width: 100%;
+    margin-left: 43.5%;
+    font-size: 22px;
+}
+
+.sub{
+    color: whitesmoke;
+    width: 100%;
+    margin-left: 44.8%;
+    text-shadow: 2px 2px 4px black;
+}
+
+.t1{
+    color: whitesmoke;
+    
+}
+
+.t2{
+    color: cadetblue;
+}
+
+.t3{
+    color: rgb(104, 37, 138);
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+.pi{
+    margin-left: 140px;
+    margin-top: 16px;
+    color: whitesmoke;
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+
+}
+
+.c{
+    color: whitesmoke;
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+
+}
+
+.pm{
+    color: whitesmoke;
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+}
+
+.r{
+    color: whitesmoke;
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+}
+
+.bprin{
+    width: 100%px;
+    height: 1200px;
+    align-content: center;
+}
+
+.roda{
+    color: white;
+    font-size: small;
+}
+
+/*formulario*/
+
+.titu{
+    margin-top: 200px;
+    color: whitesmoke;
+    margin-left: 590px;
+    font-size: 60px;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
+.subtitu{
+    margin-top: 0px;
+    margin-left: 632px;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+
+.formula{
+    border: solid 2px rgb(104, 37, 138);
+    width: 50%;
+    height: 435px;
+    margin-left: 380px;
+    background-color: plum;
+}
+
+.formula2{
+    margin-left: 100px;
+}
+
+.envi{
+    color: black;
+    margin-left: 540px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.envi:hover{
+    background-color: blueviolet;
+    color: whitesmoke;
+    padding: 6px 10px;
+}
+
+.escreve{
+    position: absolute;
+    top: 380px;
+    left: 720px;
+}
+
+.estilo{
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 4px rgb(179, 9, 230);
+    font-family: "Indie Flower", cursive;
+    margin-bottom: 15px;
+}
+
+.campos{
+    border: dotted 2px rgb(237, 203, 237);
+    background-color: whitesmoke;
+    margin: 2px;
+}
+
+.campos:hover{
+    padding: 3px 3px;
+    background-color: rgb(237, 203, 237);
+}

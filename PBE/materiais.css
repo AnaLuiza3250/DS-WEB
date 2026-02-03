@@ -1,0 +1,79 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8a1c4, #f06292);
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4e342e;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .item {
+            background-color: #fff3e0;
+            border-radius: 15px;
+            padding: 20px 10px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .folder {
+            color: #fbc02d;
+        }
+
+        .file {
+            color: #8e24aa;
+        }
+
+        .item p {
+            font-weight: bold;
+            color: #4e342e;
+            word-break: break-word;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .voltar{
+            width: 105px;
+            height: 35px;
+            background-color: #fff3e0;
+            border-radius: 15px;
+            padding: 8px 10px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
+            color: #4e342e;
+            word-break: break-word;
+        }

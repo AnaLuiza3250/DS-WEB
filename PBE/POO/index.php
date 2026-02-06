@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
 
     <div class="grid">
 
-        <a href="#" class="item">
+        <a href="Aula-01/atividade-01.php" class="item">
             <div class="icon folder">📁</div>
             <p>Aula-01</p>
         </a>

@@ -1,4 +1,4 @@
-document.getElementById("foto").setAttribute("src", "Foto de perfil.png");
+document.getElementById("foto").setAttribute("src", "todos.png");
 document.getElementById("foto").style.width = "250px";
 
 function mudaImagem1() {
@@ -14,6 +14,6 @@ function mudaImagem3() {
 }
 
 function exibir() {
-    let url = document.getElementById("foto").getAttribute("href");
+    let url = document.getElementById("foto").getAttribute("src");
     console.log(url);
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ativ.css">
+    <title>Aula-04</title>
+</head>
+<body>
+
+    <h1>Cadastro de alunos</h1>
+
+    <label>Nome</label>
+    <input id="nome" type="text">
+
+    <br><br>
+    
+    <label>Email</label>
+    <input id="email" type="email" placeholder="seu@email.com">
+
+    <br><br>
+
+    <label>Número de Registro</label>
+    <input id="registro" type="text" placeholder="RA ou RM, apenas números" maxlength="15" minlength="4" size="25">
+
+    <br><br>
+
+    <label>Telefone</label>
+    <input id="fone" type="tel" placeholder="(XX) X XXXX-XXXX">
+
+    <br><br>
+
+    <label>Série</label>
+    <select id="serie">
+        <option value="1º ano - Fundamental I">1º ano - Fundamental I</option>
+        <option value="2º ano - Fundamental I">2º ano - Fundamental I</option>
+        <option value="3º ano - Fundamental I">3º ano - Fundamental I</option>
+        <option value="4º ano - Fundamental I">4º ano - Fundamental I</option>
+        <option value="5º ano - Fundamental I">5º ano - Fundamental I</option>
+
+        <option value="6º ano - Fundamental II">6º ano - Fundamental II</option>
+        <option value="7º ano - Fundamental II">7º ano - Fundamental II</option>
+        <option value="8º ano - Fundamental II">8º ano - Fundamental II</option>
+        <option value="9º ano - Fundamental II">9º ano - Fundamental II</option>
+
+        <option value="1º ano - Ensino Médio">1º ano - Ensino Médio</option>
+        <option value="2º ano - Ensino Médio">2º ano - Ensino Médio</option>
+        <option value="3º ano - Ensino Médio">3º ano - Ensino Médio</option>
+    </select>
+
+    <select id="turma">
+        <option value="A">A</option>
+        <option value="B">B</option>
+    </select>
+
+    <button type="button" onclick="adicionar()">Adicionar na lista</button>
+
+    <br><hr><br>
+
+    <div id="lista">
+        
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

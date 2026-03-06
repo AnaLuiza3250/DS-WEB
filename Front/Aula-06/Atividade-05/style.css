@@ -1,0 +1,90 @@
+ /* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f6fb; /* branco suave com toque lilás */
+    color: #4a2c5b; /* lilás escuro para contraste */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #6a0dad; /* lilás vibrante */
+    margin-bottom: 10px;
+}
+
+/* Parágrafo de instrução */
+p {
+    text-align: center;
+    color: #5a3d7a;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff; /* branco puro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2);
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #6a0dad;
+}
+
+/* Inputs */
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #d3bce6;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #6a0dad;
+    outline: none;
+}
+
+/* Mensagens de erro */
+span {
+    color: #b30059;
+    font-size: 0.9em;
+}
+
+/* Botão */
+button,
+input[type="submit"] {
+    background-color: #6a0dad;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #4a2c5b;
+}
+
+.mensali{
+    color: #cc90f7
+}
+
+.lista{
+    display: flex;
+    flex-wrap: wrap; /* quebra linha se não couber */
+    gap: 20px; /* espaço entre os cards */
+    justify-content: center;
+}

@@ -1,0 +1,38 @@
+===================================================VALIDAÇÃO EMAIL===============================================
+/ ... /  
+As barras delimitam a expressão regular em JavaScript.
+
+^  
+Indica o início da string. Ou seja, a validação começa desde o primeiro caractere.
+
+[^\s@]+
+
+Os colchetes [...] definem um conjunto de caracteres permitidos.
+
+O acento circunflexo ^ dentro dos colchetes significa negação.
+
+\s representa qualquer espaço em branco (espaço, tab, quebra de linha).
+
+@ é o símbolo arroba.
+
+Então [^\s@] significa: qualquer caractere que não seja espaço nem arroba.
+
+O + significa um ou mais desses caracteres.
+👉 Isso garante que antes do @ exista um nome de usuário válido (sem espaços e sem outro @).
+
+@anaflix  
+Exige literalmente que, após o nome de usuário, venha @anaflix.
+
+\.com
+
+O ponto . em regex significa “qualquer caractere”.
+
+Para representar um ponto literal, usamos \..
+
+Então \.com significa exatamente .com.
+
+$  
+Indica o fim da string.
+👉 Isso garante que não haja nada depois de .com.
+
+===================================================VALIDAÇÃO URL===============================================

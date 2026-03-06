@@ -47,7 +47,7 @@ function validarEmail() {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //verifica se o email tem um formato básico válido*/
 
     // Regex que exige o domínio @anaflix.com
-    const regexEmail = /^[^\s@]+@anaflix\.com$/; //explicação em regex_anaflix.txt
+    const regexEmail = /^[^\s@]+@anaflix\.com$/; //explicação em regex_explicacoes.txt
 
     if (email === "") {
         erroEmail.textContent = "O e-mail não pode ficar vazio.";
@@ -232,17 +232,39 @@ function validarCampoCEP(){
 }
 
 function validarData() {
-
     var data = document.getElementById("data-nascimento").value;
+    var erro = document.getElementById("erro-data-nascimento");
 
-    if (data == "") {
-        document.getElementById("erro-data-nascimento").innerHTML = "Data obrigatória";
-        erroDataVal = 0;
-    } else {
-        document.getElementById("erro-data-nascimento").innerHTML = "";
-        erroDataVal = 1;
+    if (data === "") {
+        erro.textContent = "Data obrigatória";
+        erro.style.color = "red";
+        return false;
     }
+
+    // O valor vem como AAAA-MM-DD
+    var partes = data.split("-");
+    var ano = parseInt(partes[0], 10);
+    var mes = parseInt(partes[1], 10);
+    var dia = parseInt(partes[2], 10);
+
+    // Cria objeto Date
+    var dataObj = new Date(ano, mes - 1, dia);
+
+    // Verifica se bate exatamente
+    if (dataObj.getFullYear() !== ano ||
+        dataObj.getMonth() + 1 !== mes ||
+        dataObj.getDate() !== dia) {
+        erro.textContent = "Data inválida!";
+        erro.style.color = "red";
+        return false;
+    }
+
+    erro.textContent = "Data válida!";
+    erro.style.color = "green";
+    erroDataVal = 1;
+    return true;
 }
+
 
 function validarValor() {
 

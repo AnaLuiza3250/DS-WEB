@@ -203,7 +203,7 @@ function validarCep() {
     return regexCEP.test(cep);
 }
 
-function validarCampoCEP(){
+function validarCampoCEP() {
 
     const cep = document.getElementById("cep").value;
     const erroCep = document.getElementById("erro-cep");
@@ -232,12 +232,17 @@ function validarCampoCEP(){
 }
 
 function validarData() {
+    function validarData() {
     var data = document.getElementById("data-nascimento").value;
     var erro = document.getElementById("erro-data-nascimento");
+
+    // Limpa mensagens de erro anteriores
+    erro.textContent = "";
 
     if (data === "") {
         erro.textContent = "Data obrigatória";
         erro.style.color = "red";
+        erroDataVal = 0;
         return false;
     }
 
@@ -247,15 +252,40 @@ function validarData() {
     var mes = parseInt(partes[1], 10);
     var dia = parseInt(partes[2], 10);
 
-    // Cria objeto Date
-    var dataObj = new Date(ano, mes - 1, dia);
-
-    // Verifica se bate exatamente
-    if (dataObj.getFullYear() !== ano ||
-        dataObj.getMonth() + 1 !== mes ||
-        dataObj.getDate() !== dia) {
-        erro.textContent = "Data inválida!";
+    // Verifica se mês está entre 1 e 12
+    if (mes < 1 || mes > 12) {
+        erro.textContent = "Mês inválido.";
         erro.style.color = "red";
+        erroDataVal = 0;
+        return false;
+    }
+
+    // Verifica se dia está entre 1 e 31
+    if (dia < 1 || dia > 31) {
+        erro.textContent = "Dia inválido.";
+        erro.style.color = "red";
+        erroDataVal = 0;
+        return false;
+    }
+
+    // Dias máximos por mês
+    var diasNoMes = [31, // Janeiro
+        (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0) ? 29 : 28, // Fevereiro
+        31, // Março
+        30, // Abril
+        31, // Maio
+        30, // Junho
+        31, // Julho
+        31, // Agosto
+        30, // Setembro
+        31, // Outubro
+        30, // Novembro
+        31]; // Dezembro
+
+    if (dia > diasNoMes[mes - 1]) {
+        erro.textContent = "Dia inválido para o mês/ano informado.";
+        erro.style.color = "red";
+        erroDataVal = 0;
         return false;
     }
 
@@ -263,142 +293,143 @@ function validarData() {
     erro.style.color = "green";
     erroDataVal = 1;
     return true;
+    }
 }
 
 
 function validarValor() {
 
-    const valor = document.getElementById("valor").value.trim();
-    const erroValor = document.getElementById("erro-valor");
+        const valor = document.getElementById("valor").value.trim();
+        const erroValor = document.getElementById("erro-valor");
 
-    // Regex para formato monetário brasileiro: 1.299,90
-    const regexValor = /^\d{1,3}(\.\d{3})*,\d{2}$/;
+        // Regex para formato monetário brasileiro: 1.299,90
+        const regexValor = /^\d{1,3}(\.\d{3})*,\d{2}$/;
 
-    if (!regexValor.test(valor)) {
-        erroValor.textContent = "Formato inválido! Use o padrão brasileiro (ex.: 1.299,90)";
-        erroValor.style.color = "red";
-        erroValorVal = 0;
-        return;
+        if (!regexValor.test(valor)) {
+            erroValor.textContent = "Formato inválido! Use o padrão brasileiro (ex.: 1.299,90)";
+            erroValor.style.color = "red";
+            erroValorVal = 0;
+            return;
+        }
+
+        // Converte para número (substitui ponto por nada e vírgula por ponto)  PARA PODER VALIDAR, JÁ QUE O JS USA O PONTO COMO SEPARADOR DECIMAL
+        const valorNum = parseFloat(valor.replace(/\./g, "").replace(",", "."));
+
+        // Intervalo permitido (exemplo: entre 100 e 5000)
+        const min = 42.50;
+        const max = 5000;
+
+        if (isNaN(valorNum)) {
+            erroValor.textContent = "Digite um valor numérico.";
+            erroValor.style.color = "red";
+            erroValorVal = 0;
+        } else if (valorNum < min || valorNum > max) {
+            erroValor.textContent = `O valor deve estar entre R$ ${min.toFixed(2)} e R$ ${max.toFixed(2)}.`;
+            erroValor.style.color = "red";
+            erroValorVal = 0;
+        } else {
+            erroValor.textContent = "Valor válido!";
+            erroValor.style.color = "green";
+            erroValorVal = 1;
+        }
     }
-
-    // Converte para número (substitui ponto por nada e vírgula por ponto)  PARA PODER VALIDAR, JÁ QUE O JS USA O PONTO COMO SEPARADOR DECIMAL
-    const valorNum = parseFloat(valor.replace(/\./g, "").replace(",", "."));
-
-    // Intervalo permitido (exemplo: entre 100 e 5000)
-    const min = 42.50;
-    const max = 5000;
-
-    if (isNaN(valorNum)) {
-        erroValor.textContent = "Digite um valor numérico.";
-        erroValor.style.color = "red";
-        erroValorVal = 0;
-    } else if (valorNum < min || valorNum > max) {
-        erroValor.textContent = `O valor deve estar entre R$ ${min.toFixed(2)} e R$ ${max.toFixed(2)}.`;
-        erroValor.style.color = "red";
-        erroValorVal = 0;
-    } else {
-        erroValor.textContent = "Valor válido!";
-        erroValor.style.color = "green";
-        erroValorVal = 1;
-    }
-}
 
 function validarUrl() {
 
-    const url = document.getElementById("url").value.trim();
-    const erroUrl = document.getElementById("erro-url");
+        const url = document.getElementById("url").value.trim();
+        const erroUrl = document.getElementById("erro-url");
 
-    // Regex para verificar se começa com http:// ou https://
-    const regexUrl = /^(http:\/\/|https:\/\/).+/;
+        // Regex para verificar se começa com http:// ou https://
+        const regexUrl = /^(http:\/\/|https:\/\/).+/;
 
-    if (url === "") {
-        erroUrl.textContent = "A URL não pode ficar vazia.";
-        erroUrl.style.color = "red";
-        erroURLVal = 0;
-    } else if (!regexUrl.test(url)) {
-        erroUrl.textContent = "A URL deve começar com http:// ou https://";
-        erroUrl.style.color = "red";
-        erroURLVal = 0;
-    } else {
-        erroUrl.textContent = "URL válida!";
-        erroUrl.style.color = "green";
-        erroURLVal = 1;
+        if (url === "") {
+            erroUrl.textContent = "A URL não pode ficar vazia.";
+            erroUrl.style.color = "red";
+            erroURLVal = 0;
+        } else if (!regexUrl.test(url)) {
+            erroUrl.textContent = "A URL deve começar com http:// ou https://";
+            erroUrl.style.color = "red";
+            erroURLVal = 0;
+        } else {
+            erroUrl.textContent = "URL válida!";
+            erroUrl.style.color = "green";
+            erroURLVal = 1;
+        }
     }
-}
 
 function validarCartao() {
 
-    const numero = document.getElementById("cartao").value.replace(/\s+/g, "");
-    const erroCartao = document.getElementById("erro-cartao");
+        const numero = document.getElementById("cartao").value.replace(/\s+/g, "");
+        const erroCartao = document.getElementById("erro-cartao");
 
-    // Verifica se tem 16 dígitos numéricos
-    if (!/^\d{16}$/.test(numero)) {
-        erroCartao.textContent = "O cartão deve ter exatamente 16 dígitos numéricos.";
-        erroCartao.style.color = "red";
-        erroCartaoVal = 0;
-        return;
+        // Verifica se tem 16 dígitos numéricos
+        if (!/^\d{16}$/.test(numero)) {
+            erroCartao.textContent = "O cartão deve ter exatamente 16 dígitos numéricos.";
+            erroCartao.style.color = "red";
+            erroCartaoVal = 0;
+            return;
+        }
+
+        // Identifica bandeira pelo prefixo
+        let bandeira = "";
+        if (/^4/.test(numero)) {
+            bandeira = "Visa";
+        } else if (/^5[1-5]/.test(numero)) {
+            bandeira = "MasterCard";
+        } else if (/^3[47]/.test(numero)) {
+            bandeira = "American Express (15 dígitos, não 16)";
+        } else if (/^6(?:011|5)/.test(numero)) {
+            bandeira = "Discover";
+        } else {
+            bandeira = "Bandeira desconhecida";
+        }
+
+        erroCartao.textContent = `Cartão válido! Bandeira: ${bandeira}`;
+        erroCartao.style.color = "green";
+        erroCartaoVal = 1;
+
+        let valor = e.target.value.replace(/\D/g, ""); // remove tudo que não é número
+
+        if (valor.length > 16) valor = valor.slice(0, 16); // limita a 16 dígitos
+
+        // Aplica máscara: 0000 0000 0000 0000
+        e.target.value = valor.replace(/(\d{4})(?=\d)/g, "$1 ");
     }
-
-    // Identifica bandeira pelo prefixo
-    let bandeira = "";
-    if (/^4/.test(numero)) {
-        bandeira = "Visa";
-    } else if (/^5[1-5]/.test(numero)) {
-        bandeira = "MasterCard";
-    } else if (/^3[47]/.test(numero)) {
-        bandeira = "American Express (15 dígitos, não 16)";
-    } else if (/^6(?:011|5)/.test(numero)) {
-        bandeira = "Discover";
-    } else {
-        bandeira = "Bandeira desconhecida";
-    }
-
-    erroCartao.textContent = `Cartão válido! Bandeira: ${bandeira}`;
-    erroCartao.style.color = "green";
-    erroCartaoVal = 1;
-
-    let valor = e.target.value.replace(/\D/g, ""); // remove tudo que não é número
-
-    if (valor.length > 16) valor = valor.slice(0, 16); // limita a 16 dígitos
-
-    // Aplica máscara: 0000 0000 0000 0000
-    e.target.value = valor.replace(/(\d{4})(?=\d)/g, "$1 ");
-}
 
 /* =========================VALIDAR TUDO========================= */
 
 function validarFormulario() {
 
-    validarNome();
-    validarEmail();
-    validarSenha();
-    validarConfirmaSenha();
-    validarCPF();
-    validarTelefone();
-    validarCep();
-    validarData();
-    validarValor();
-    validarUrl();
-    validarCartao();
+        validarNome();
+        validarEmail();
+        validarSenha();
+        validarConfirmaSenha();
+        validarCPF();
+        validarTelefone();
+        validarCep();
+        validarData();
+        validarValor();
+        validarUrl();
+        validarCartao();
 
-    if (
-        erroNomeVal == 1 &&
-        erroEmailVal == 1 &&
-        erroSenhaVal == 1 &&
-        erroConfirmaVal == 1 &&
-        erroCpfVal == 1 &&
-        erroTelefoneVal == 1 &&
-        erroCepVal == 1 &&
-        erroDataVal == 1 &&
-        erroValorVal == 1 &&
-        erroUrlVal == 1 &&
-        erroCartaoVal == 1
-    ) {
-        return true;
+        if (
+            erroNomeVal == 1 &&
+            erroEmailVal == 1 &&
+            erroSenhaVal == 1 &&
+            erroConfirmaVal == 1 &&
+            erroCpfVal == 1 &&
+            erroTelefoneVal == 1 &&
+            erroCepVal == 1 &&
+            erroDataVal == 1 &&
+            erroValorVal == 1 &&
+            erroUrlVal == 1 &&
+            erroCartaoVal == 1
+        ) {
+            return true;
+        }
+
+        return false;
     }
-
-    return false;
-}
 
 /* =========================
 ADICIONAR NA LISTA
@@ -406,46 +437,46 @@ ADICIONAR NA LISTA
 
 function adicionar() {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    if (!validarFormulario()) {
-        alert("Preencha todos os campos corretamente");
-        return;
+        if (!validarFormulario()) {
+            alert("Preencha todos os campos corretamente");
+            return;
+        }
+
+        contador++;
+
+        var nome = document.getElementById("nome").value;
+        var email = document.getElementById("email").value;
+        var cpf = document.getElementById("cpf").value;
+        var telefone = document.getElementById("telefone").value;
+        var cep = document.getElementById("cep").value;
+        var data = document.getElementById("data-nascimento").value;
+        var valor = document.getElementById("valor").value;
+        var url = document.getElementById("url").value;
+
+        var lista = document.getElementById("lista");
+
+        var item = document.createElement("div");
+
+        item.setAttribute("id", "item" + contador);
+
+        item.innerHTML =
+            "<p>" +
+            "<strong>Nome:</strong> " + nome + "<br>" +
+            "<strong>Email:</strong> " + email + "<br>" +
+            "<strong>CPF:</strong> " + cpf + "<br>" +
+            "<strong>Telefone:</strong> " + telefone + "<br>" +
+            "<strong>CEP:</strong> " + cep + "<br>" +
+            "<strong>Data de Nascimento:</strong> " + data + "<br>" +
+            "<strong>Valor:</strong> " + valor + "<br>" +
+            "<strong>URL:</strong> " + url +
+            "</p>" +
+            "<button onclick='remover(\"item" + contador + "\")'>Remover</button>";
+
+        lista.appendChild(item);
+
     }
-
-    contador++;
-
-    var nome = document.getElementById("nome").value;
-    var email = document.getElementById("email").value;
-    var cpf = document.getElementById("cpf").value;
-    var telefone = document.getElementById("telefone").value;
-    var cep = document.getElementById("cep").value;
-    var data = document.getElementById("data-nascimento").value;
-    var valor = document.getElementById("valor").value;
-    var url = document.getElementById("url").value;
-
-    var lista = document.getElementById("lista");
-
-    var item = document.createElement("div");
-
-    item.setAttribute("id", "item" + contador);
-
-    item.innerHTML =
-        "<p>" +
-        "<strong>Nome:</strong> " + nome + "<br>" +
-        "<strong>Email:</strong> " + email + "<br>" +
-        "<strong>CPF:</strong> " + cpf + "<br>" +
-        "<strong>Telefone:</strong> " + telefone + "<br>" +
-        "<strong>CEP:</strong> " + cep + "<br>" +
-        "<strong>Data de Nascimento:</strong> " + data + "<br>" +
-        "<strong>Valor:</strong> " + valor + "<br>" +
-        "<strong>URL:</strong> " + url +
-        "</p>" +
-        "<button onclick='remover(\"item" + contador + "\")'>Remover</button>";
-
-    lista.appendChild(item);
-
-}
 
 /* =========================
 REMOVER
@@ -453,11 +484,11 @@ REMOVER
 
 function remover(id) {
 
-    var item = document.getElementById(id);
+        var item = document.getElementById(id);
 
-    document.getElementById("lista").removeChild(item);
+        document.getElementById("lista").removeChild(item);
 
-} var erroNomeVal = 0;
+    } var erroNomeVal = 0;
 var erroEmailVal = 0;
 var erroSenhaVal = 0;
 var erroCPFVal = 0;

@@ -1,0 +1,134 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2, p {
+  margin: 10px;
+}
+
+
+
+/* ========== Estilização para o Menu ========== */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+table {
+    width:80%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+th {
+    background-color: #6f4e37; /* café */
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+/*=========================Estilização Formulário==========================*/
+
+.formulario{
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.formulario h3 {
+  text-align: center;
+}
+
+
+/* Estilização para os campos do Formulário */
+
+label {display: block;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+
+
+/* Estilização para o botão do formulário */
+
+.button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+
+.button-enviar {
+  border: 2px solid #04AA6D;
+
+}
+.button-enviar:hover {
+  background-color: #04AA6D;
+  color: white;
+}

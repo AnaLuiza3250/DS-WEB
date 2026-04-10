@@ -55,12 +55,13 @@ async function getCategorias() {
     `;
 
     // Calcula o total geral
-    let totalGeral = resposta.data.reduce((soma, item) => soma + (item.quantidade * item.preco), 0);
+    totalGeral = resposta.data.reduce((soma, item) => soma + (item.quantidade * item.preco), 0);
 
     // Atualiza a div fora da tabela
     document.getElementById("total").innerHTML = `
         <h3>Total Geral dos Pedidos: R$ ${totalGeral.toFixed(2)}</h3>
     `;
+
 }
 
 
@@ -83,6 +84,19 @@ async function postCategoria() {
 
     // Limpa os campos
     document.getElementById("quantidade").value = "";
+
+    //ADICIONAR O TOTAL
+    const mandar = await fetch("http://localhost/cafeteria-api/pedido_item", {
+    method: "POST",
+    body: JSON.stringify({
+        pedido_id: pedidoId,
+        total: totalGeral
+        })
+    });
+    
+    const resp = await mandar.json();
+    console.log(resp);
+
 
     getCategorias()
 }

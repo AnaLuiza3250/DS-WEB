@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', getCategorias)
 document.getElementById('botaoEnviar').addEventListener('click', postCategoria)
 
 async function getCategorias() {
-    var requisicao = await fetch("http://localhost/cafeteria-api/pedido_item")
+    var requisicao = await fetch("http://localhost/cafeteria-api/pedido_item/" + pedidoId)
     var resposta = await requisicao.json()
 
     console.log(resposta)

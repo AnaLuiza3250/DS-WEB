@@ -69,7 +69,18 @@ switch($method){
     // -------------------------------------------------------
     case 'DELETE':
         
+        if (!$id) {
+            http_response_code(400);
+            echo json_encode(['status' => 'error', 'message' => 'ID não informado.']);
+            break;
+        }
+
+        $database->executeQuery('DELETE FROM categorias WHERE id = :id', [':id' => $id]);
+        echo json_encode(['status' => 'success', 'message' => 'Item removido.']);
         break;
+  
+
+       
     // -------------------------------------------------------
     // Método não permitido
     // -------------------------------------------------------
@@ -79,6 +90,8 @@ switch($method){
             'status'  => 'error',
             'message' => 'Método não permitido.'
         ]);
+
+
 }
 
 

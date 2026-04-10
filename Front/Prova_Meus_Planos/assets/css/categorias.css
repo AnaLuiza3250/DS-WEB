@@ -1,0 +1,188 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Corpo */
+body {
+    background: linear-gradient(135deg, #fdfdfd, #f3f3f3);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menu de navegação */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+ul li a:hover,
+ul li a#categoria {
+    background: #4a90e2;
+    color: #fff;
+}
+
+/* Formulário */
+.formulario {
+    background: #ffffff;
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.formulario h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+.formulario label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Botão */
+.button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-enviar {
+    background: #4a90e2;
+    color: #fff;
+}
+
+.button-enviar:hover {
+    background: #357ABD;
+}
+
+/* Resposta */
+#resposta {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/*====================TABELA======================*/
+
+/* Estilo da tabela */
+.sua-classe {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Cabeçalho */
+.sua-classe thead {
+    background: #4a90e2;
+    color: #fff;
+}
+
+.sua-classe th {
+    padding: 14px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Linhas */
+.sua-classe td {
+    padding: 12px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+/* Alternância de cor nas linhas */
+.sua-classe tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.sua-classe tbody tr:hover {
+    background: #eef6ff;
+    transition: background 0.3s ease;
+}
+
+/* Botão Deletar */
+.sua-classe button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #e74c3c;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sua-classe button:hover {
+    background: #c0392b;
+}

@@ -18,19 +18,22 @@ switch($method){
     // -------------------------------------------------------
     // -------------------------------------------------------
     case 'GET':
-        
-        $produtos = $database->executeQuery("
-            SELECT *
-            FROM pedido_itens
-            INNER JOIN produtos
-            ON pedido_itens.produto_id = produtos.id")->fetchAll();
-
+        $stmt = $database->executeQuery(
+            "SELECT pedido_itens.*, produtos.nome 
+             FROM pedido_itens
+             INNER JOIN produtos ON pedido_itens.produto_id = produtos.id
+             WHERE pedido_itens.pedido_id = :pedido_id",
+            [':pedido_id' => $id]
+        );
+        $produtos = $stmt->fetchAll();
+  
         echo json_encode([
             'status' => 'success',
-            'data' => $produtos
+            'data'   => $produtos
         ]);
-
         break;
+
+
     // -------------------------------------------------------
     // -------------------------------------------------------
     case 'POST':
@@ -83,6 +86,32 @@ switch($method){
             'message' => 'Item do pedido cadastrado com sucesso',
             'idItem' => $database->lastInsertId()
         ]);
+
+        /*//ADIÇÃO DO VALOR TOTAL NA TABELA PEDIDOS
+
+        $pedido_id = trim($body['pedido_id']);
+        $total     = trim($body['total']);
+
+        if(!$pedido_id || !$total){
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Campos obrigatórios não informados'
+            ]);
+            break;
+        }
+
+        $database->executeQuery(
+            "UPDATE pedidos SET total = :total WHERE id = :pedido_id",
+            [
+                ':total'     => $total,
+                ':pedido_id' => $pedido_id
+            ]
+        );
+
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'Total atualizado com sucesso'
+        ]);*/
         
         break;
 
@@ -107,7 +136,7 @@ switch($method){
         }
 
         $apagar = $database->executeQuery(
-            "DELETE FROM pedidos WHERE id = :id",
+            "DELETE FROM pedido_itens WHERE id = :id",
             [':id' => $id]
         );
 

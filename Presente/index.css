@@ -1,0 +1,118 @@
+     body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffcad4; /* Rosa pastel */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .btn-coragem {
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            background-color: #f72585;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .btn-coragem:hover {
+            transform: scale(1.1);
+            background-color: #b5179e;
+        }
+
+        body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffcad4; /* Cor de fundo base */
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Camada da Marca d'água */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Substitua pelo nome do arquivo da imagem que você subiu */
+    background-image: url('mae/Captura\ de\ tela\ 2026-05-08\ 154253.png'); 
+    
+    background-size: cover;      /* Faz a imagem cobrir a tela toda */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    
+    opacity: 0.2;               /* Aqui você controla a "transparência" da marca d'água */
+    z-index: -1;                /* Garante que fique atrás do botão */
+}
+
+.btn-coragem {
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    background-color: #f72585;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    position: relative; /* Garante que fique acima da marca d'água */
+}
+
+.btn-coragem:hover {
+    transform: scale(1.1);
+}
+
+
+/* Container que cobre a tela toda */
+.sparkles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Garante que os brilhos não atrapalhem os cliques nos botões */
+    z-index: 999;
+}
+
+/* Estilo do brilho individual */
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    animation: flash 3s infinite ease-in-out;
+}
+
+/* Faz o brilho parecer uma estrelinha (formato de cruz opcional) */
+.sparkle::before, .sparkle::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+}
+.sparkle::before { width: 2px; height: 10px; top: -2px; left: 2px; }
+.sparkle::after { width: 100%; height: 2px; top: 2px; left: -2px; }
+
+/* Animação para piscar e subir devagar */
+@keyframes flash {
+    0%, 100% { 
+        opacity: 0; 
+        transform: scale(0.5) translateY(0); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.2) translateY(-20px); 
+    }
+}

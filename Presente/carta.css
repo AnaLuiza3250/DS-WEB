@@ -1,0 +1,74 @@
+body {
+            background-color: #fbc4ab;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .papel {
+            background-color: #fff;
+            width: 80%;
+            max-width: 600px;
+            min-height: 400px;
+            padding: 50px;
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            position: relative;
+            background-image: linear-gradient(#e5e5e5 1px, transparent 1px);
+            background-size: 100% 2em; /* Efeito de linhas de caderno se quiser */
+            line-height: 2em;
+        }
+        .papel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 40px;
+            height: 100%;
+            width: 2px;
+            background-color: #ffadad;
+        }
+        .texto-carta {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #333;
+            margin-left: 20px;
+        }
+
+        
+        /*BOTÃO*/
+.btn-voltar {
+    /* Posicionamento Fixo */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+
+    /* Seu estilo escolhido */
+    background-color: #ff8fa3; /* Rosa suave */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 143, 163, 0.3);
+    
+    /* Alinhamento interno */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-voltar:hover {
+    background-color: #ff4d6d;
+    transform: translateY(-3px); /* Efeito de pular */
+    box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+}
+
+.btn-voltar:active {
+    transform: translateY(0);
+}
